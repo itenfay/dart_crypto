@@ -4,12 +4,12 @@
 
 ## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
-[Flutter中文网](https://flutterchina.club).
-[Flutter SDK Archive](https://flutter.io/sdk-archive/#macos).
-[Dart Packages](https://pub.flutter-io.cn).
-[Dart2 中文文档](https://www.kancloud.cn/marswill/dark2_document/709087).
+For help getting started with Flutter, view our online <br>
+1. [documentation](https://flutter.io/). <br>
+2. [Flutter中文网](https://flutterchina.club). <br>
+3. [Flutter SDK Archive](https://flutter.io/sdk-archive/#macos). <br>
+4. [Dart Packages](https://pub.flutter-io.cn). <br>
+5. [Dart2 中文文档](https://www.kancloud.cn/marswill/dark2_document/709087). <br>
 
 ## Usage
 
