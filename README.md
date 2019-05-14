@@ -35,8 +35,8 @@ try {
 try {
     final md5Hash = dtcrypt.DYFCryptoProvider.md5Encode(plainText);
     debugPrint("[md5] Hash: " + md5Hash);
-    final md5b16hash = dtcrypt.DYFCryptoProvider.md5Bytes16Enconde(plainText);
-    debugPrint("[md5] 16bytes hash: " + md5b16hash);
+    final md5b16hash = dtcrypt.DYFCryptoProvider.bit16md5Enconde(plainText);
+    debugPrint("[md5] 16 bit hash: " + md5b16hash);
 } catch (e) {
     debugPrint("e: $e");
 }
@@ -60,41 +60,25 @@ try {
 ```
 // 公钥与私钥
 final publicKey =
-"""MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApSHIqtGQIMp5vUv5XpLz
-sdVMxy9RW5VhH4dlVo7C3ZhIjS6UOxxXIVzC1AYjQIWHx9exxu4XsoeyvAisHuM+
-GvEzpZ43NPrputlDNcoIY5Ff+U8UFThx/v4hlsOJY9/Mo65p1HbTPgN4uQSaVZMU
-4UrVmR6Lj9yj6+0TpmN1fjS1d23RXGFfx+lIridUTyJMJu27NklUQd7MloaZr6dJ
-czQWdbzEs1uOIJcxo/msY3K7pLJuZ83xXI8CPxkEe/nDQ9kJ6HKPvbXlk9hO1kR9
-k3fo3DCmx9HdNSRPlKXNpzOPn579dQMGg1OgpH1uO5cljkPWdkvliVljY4SWV6fu
-mQIDAQAB""";
+"""MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmPW2SwJFldGVB1SM82VYvSZYR
+F1H5DREUiDK2SLnksxHAV/roC1uB44a4siUehJ9AKeV/g58pVrjhX3eSiBh9Khom
+/S2hEWF2n/6+lqqiwQi1W5rjl86v+dI2F6NgbPFpfesrRjWD9uskT2VX/ZJuMRLz
+8VPIyQOM9TW3PkMYBQIDAQAB""";
 
 final privateKey =
-"""MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQClIciq0ZAgynm9
-S/lekvOx1UzHL1FblWEfh2VWjsLdmEiNLpQ7HFchXMLUBiNAhYfH17HG7heyh7K8
-CKwe4z4a8TOlnjc0+um62UM1yghjkV/5TxQVOHH+/iGWw4lj38yjrmnUdtM+A3i5
-BJpVkxThStWZHouP3KPr7ROmY3V+NLV3bdFcYV/H6UiuJ1RPIkwm7bs2SVRB3syW
-hpmvp0lzNBZ1vMSzW44glzGj+axjcruksm5nzfFcjwI/GQR7+cND2Qnoco+9teWT
-2E7WRH2Td+jcMKbH0d01JE+Upc2nM4+fnv11AwaDU6CkfW47lyWOQ9Z2S+WJWWNj
-hJZXp+6ZAgMBAAECggEAHBq93mTAVPRg99jAXlpAY5nb8WKaRC4OU6Flm++8Np6+
-aljtHYpbQfBZsGBDC64uR9LsDOFk4xu5TctkD/W5EjjPA3cECl5R/V0Q1UzHVLrf
-TL0qu9nZfP6flNs+vOLQH2OF24VFup44o7Sm172qphVoeSD7u8Zfl73HxF/VFV95
-LPQ81ITms4z7ddcOgzzM88RiISVitTJQWncq7BfxfjH7WdoXiYGs4c9v2CFrZWjy
-qoSmS9xP2mvaE9kaXhGPw3wiAMMBAkZ0QcUTR956xUvt8DuImAaJp696nglW/lEn
-8b+SO3R0RHzBaAambSAPCQOBz7SSCFE6+x7FJHrgqQKBgQDQSH2XuJs9lt7fYsE0
-FRzRgTFyerkZn/O6rPye1KLAeW7LzA+iOK0EDMkzrmzNffudBi53HnBf03Od1F89
-/hZX22UZQ+Z52S1lhy8OnK2PS78pCJsZm2BFgpvXFXS8NOXOjdwxDq6Hqy1oDyeS
-LatRUqdirOxoP4BU/VVoBK0RDwKBgQDK9omLppSHz13ipIfDucjiDay5tdYwMv5c
-BwUDdNF0aHRUWiO3NqwBe33mSIN4spjbPwHnk3wN9hZJHJJug9t7czJPjJvV3/SL
-D50/AoL+iO76ZQ/0jo7XCcSwMCXj33UKfj2LArSH0dZOgceM7E8otx+II78z6ldO
-Gq4M4NG11wKBgHqXkESzBbyUho3ZJHqxSosNjbsh/LzWZrCjjPU3lqvPTaVqcHE9
-BqjxlaNzsNqqomRj9QlrwxzD6rMlAwIMAb6ohbL/QjLJ32x4yvvAwG8tWFCgnhnO
-WDXRkERifpkgUXroCIhfad60pD8xXEsv0jxFd/weZ+9cIP7lNVXKGsuFAoGBALnB
-rB9ZJYWq34WICg2zosxpsZUCfHb+pNf7QLZqGy1MUHPHT/rmGcT9jjvOUC2OX+IB
-p6+XxylL+heOA+ML4Tv6MaimyxWS9FC1yLgbh2KIVxhqmJC+TLM46IBMgNEu+gLR
-iWgJ4MqR3W9azhUHTme4Oi6ycNOF/cOpHXUB6k1fAoGBAJ5ThMARzkV9Rl5lxfRs
-BHHy+6JhHirubnV6NLWP/1pI9yS3H/kQKmgoueAIytB43kX/upQdASZZkRJwFZqr
-qRszOiB3ds/jKTZuokCkT7cq5CrLUyoDpu6SsRgNI1yO9BTKI+UF6htNlehJjN+g
-0/uj5f+4Zr5HZvGd7XQm00wm""";
+"""MIICXAIBAAKBgQCmPW2SwJFldGVB1SM82VYvSZYRF1H5DREUiDK2SLnksxHAV/ro
+C1uB44a4siUehJ9AKeV/g58pVrjhX3eSiBh9Khom/S2hEWF2n/6+lqqiwQi1W5rj
+l86v+dI2F6NgbPFpfesrRjWD9uskT2VX/ZJuMRLz8VPIyQOM9TW3PkMYBQIDAQAB
+AoGAK2VVuT1ztxxPYoQVEslZaja3afbAe1ch4k47jsIlZMIqHB/ba7+rP5j5jjVS
+40iTmdhWBJeDcPMmiA631BSa74XW4RyZ8JDtu1qOYxH5tqhgsIEDbVAAqCB+t+y1
+3z/Nb+SO3mbRGu5HzvAMaad3M7ztR3SAJTiPK1OI293wdXECQQDS4Hx3fwg66NYL
+b061Hk8P5arClUnBoh5/qZk/kx3nen7SdjACVXC/9B/PnxTeZkcqQi+y0MjzuPHU
+5n2PT26HAkEAyc/MWRqtgTQHd4EqzYt6vvkhMo0T8w36/ABiQSRfKrbJXEmK1Qf4
+4z8f6jTZTMTqF56aMwaI81Uzt1IqzCf8EwJBAM2/d9GDoT0RBh58CJhQrSU+mWBn
+FmKV0hoPGNXdrZS3gNvJssfkIzE2eH8zoMHpms/RagaXDSo3LcTi6mkUQCsCQFz2
+cM524IfM3Meq43mtj4xbHHS50f+7Z+sfjiMtyvzVGGp/oglB099yW5Q6ZgLcDm10
+7NkmYH2euOTwX7CNlqsCQBicZxvPsIgp8zdAiGbxverXzmZs9JZDODUhw8HQkm2o
+CZWXHDraHaZ9NA88vpdLfqBXtF5t0QNFpD80F/7HjtE=""";
 ```
 ```dart
 try {
@@ -106,7 +90,7 @@ try {
     String signature = dtcrypt.DYFCryptoProvider.rsaSign(plainText, privateKey);
     debugPrint("[rsa] signature: " + signature);
     bool ret = dtcrypt.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
-    debugPrint("[rsa] signature verify: " + ret.toString());
+    debugPrint("[rsa] signature verification: " + ret.toString());
 } catch (e) {
     debugPrint("e: $e");
 }

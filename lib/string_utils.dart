@@ -8,11 +8,11 @@ import 'dart:math' show Random;
 import './crypto/crypto_provider.dart' as crypt;
 
 class KeyConstants {
-  static final kComm = "!@##@...#FDSFD}";
+  static final kComm = "##@...#FiQKBgQCmPW2SwJFl}";
   static final kPublic =
-      "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCB2LJFffp...FTgBJFtOltfmJXVOzHPw8yEO07v+I8tPH56qiCP4KFQIDAQAB";
+      "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmPW2SwJFldGVB1SM82VYvSZYR...8VPIyQOM9TW3PkMYBQIDAQAB";
   static final kPrivate =
-      "MIICdgIBADANBgkqhk/rVH+L+ZLtAkEAsfVueXe...V8PM7i5i8JYHGp+TeuYFTKH7MvW9azIm3wBXj+JbuOe5fuSEuofeRWk7LCAzO9K82NEifaGeVstmC7g==";
+      "MIICXAIBAAKBgQCmPW2SwJFldGVB1SM82VYvSZYRF1H5DREUiDK2SLnksxHAV/ro...CZWXHDraHaZ9NA88vpdLfqBXtF5t0QNFpD80F/7HjtE=";
 }
 
 class RandomObjectGenerator {
