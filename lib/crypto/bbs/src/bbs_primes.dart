@@ -1,3 +1,8 @@
+//
+// Modified by dyf on 2018/8/31.
+// Copyright (c) 2018 dyf.
+//
+
 import 'dart:math' show Random;
 
 // Copies bigInt, then judges whether a large number is prime or not.

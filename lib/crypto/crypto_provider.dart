@@ -1,3 +1,8 @@
+//
+// Created by dyf on 2018/8/31.
+// Copyright (c) 2018 dyf.
+//
+
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
@@ -6,15 +11,15 @@ import 'dart:math' as Math;
 import 'package:crypto/crypto.dart';
 
 import './des/tripledes.dart' as DESUtils;
-import './dycrypto_aes.dart';
+import './crypto_aes.dart';
 import './rsa/rsa.dart' show KeyPair;
 import './rsa/rsa_block.dart' show RSABlock;
 import './rsa/rsa_key_formatter.dart' show RSAKeyFormatter;
 
-/// [DYCryptoProvider] provides Base64, 16/32 MD5, AES, RSA, etc.
-class DYCryptoProvider {
+/// [DYFCryptoProvider] provides Base64, 16/32 bit MD5, AES, RSA, etc.
+class DYFCryptoProvider {
   /// Converts a string to base64.
-  static dyBase64Encode(String string) {
+  static aBase64Encode(String string) {
     if (string == null) throw new ArgumentError("The argument is null");
 
     // get a base64 encoder instance.
@@ -29,7 +34,7 @@ class DYCryptoProvider {
   }
 
   /// Converts a base64 encoded string to a string or a `Uint8List`.
-  static dyBase64Decode(String encodedString, {bool createUint8List = false}) {
+  static aBase64Decode(String encodedString, {bool createUint8List = false}) {
     if (encodedString == null) throw new ArgumentError("encodedString is null");
 
     // get a base64 decoder instance.
@@ -90,8 +95,8 @@ class DYCryptoProvider {
     return digest.toString();
   }
 
-  /// Creates a 16 bytes hash value with md5.
-  static md5Bytes16Enconde(String input) {
+  /// Creates a 16 bit hash value with md5.
+  static bit16md5Enconde(String input) {
     var hash = md5Encode(input);
     return hash.substring(8, 24);
   }

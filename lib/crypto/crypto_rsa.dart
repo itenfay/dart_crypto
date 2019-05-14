@@ -1,3 +1,10 @@
+//
+// Created by dyf on 2018/8/31.
+// Copyright (c) 2018 dyf.
+//
+// Deprecated("Use rsa keyPair")
+//
+
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as Math;

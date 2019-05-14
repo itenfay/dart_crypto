@@ -1,3 +1,8 @@
+//
+// Modified by dyf on 2018/8/31.
+// Copyright (c) 2018 dyf.
+//
+
 import 'dart:math' show Random, log;
 import 'bbs_primes.dart' as primes;
 

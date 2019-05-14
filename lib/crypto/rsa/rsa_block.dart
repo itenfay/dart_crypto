@@ -1,3 +1,8 @@
+//
+// Created by dyf on 2018/8/31.
+// Copyright (c) 2018 dyf.
+//
+
 // Calculates the number of block processing times.
 class RSABlock {
   final data;

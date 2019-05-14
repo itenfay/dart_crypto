@@ -1,3 +1,8 @@
+//
+// Created by dyf on 2018/8/31.
+// Copyright (c) 2018 dyf.
+//
+
 // Converts the key to the content of pem for RSA
 class RSAKeyFormatter {
   static formatRSAPublicKey(String publicKey) {

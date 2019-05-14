@@ -1,6 +1,11 @@
+//
+// Created by dyf on 2018/8/31.
+// Copyright (c) 2018 dyf.
+//
+
 import 'package:flutter/material.dart';
 
-import './dycrypto/dycrypto_provider.dart' as tqcrypt;
+import './crypto/crypto_provider.dart' as dtcrypt;
 
 final publicKey =
     """MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApSHIqtGQIMp5vUv5XpLz
@@ -49,33 +54,32 @@ void cryptoTest() {
   debugPrint("plainText: " + plainText);
 
   try {
-    final base64Encoded = tqcrypt.DYCryptoProvider.dyBase64Encode(plainText);
+    final base64Encoded = dtcrypt.DYFCryptoProvider.aBase64Encode(plainText);
     debugPrint("[base64] encode: " + base64Encoded);
-    final base64Decoded = tqcrypt.DYCryptoProvider.dyBase64Decode(base64Encoded);
+    final base64Decoded = dtcrypt.DYFCryptoProvider.aBase64Decode(base64Encoded);
     debugPrint("[base64] decode: " + base64Decoded);
 
-    final md5Hash = tqcrypt.DYCryptoProvider.md5Encode(plainText);
+    final md5Hash = dtcrypt.DYFCryptoProvider.md5Encode(plainText);
     debugPrint("[md5] Hash: " + md5Hash);
-
-    final md5b16hash = tqcrypt.DYCryptoProvider.md5Bytes16Enconde(plainText);
-    debugPrint("[md5] 16bytes hash: " + md5b16hash);
+    final md5b16hash = dtcrypt.DYFCryptoProvider.md5Bytes16Enconde(plainText);
+    debugPrint("[md5] 16bit hash: " + md5b16hash);
 
     // final aesKey = "smMQI8dMK2nOMUR0TdpBYQUnLpbW8kjHrdy86WtU6eB1Ff6mYveYzezopmbjwBZEjPQmg";
     final aesKey = "smMQI8dMK2";
     debugPrint("[aes] key: " + aesKey);
-    String aesEncryptedText = tqcrypt.DYCryptoProvider.aesEncrypt(plainText, aesKey);
+    String aesEncryptedText = dtcrypt.DYFCryptoProvider.aesEncrypt(plainText, aesKey);
     debugPrint("[aes] encryptedText: " + aesEncryptedText);
-    String aesDecryptedText = tqcrypt.DYCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
+    String aesDecryptedText = dtcrypt.DYFCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
     debugPrint("[aes] decryptedText: " + aesDecryptedText);
 
-    String rsaEncryptedText = tqcrypt.DYCryptoProvider.rsaEncrypt(plainText, publicKey);
+    String rsaEncryptedText = dtcrypt.DYFCryptoProvider.rsaEncrypt(plainText, publicKey);
     debugPrint("[rsa] encryptedText: " + rsaEncryptedText);
-    String rsaDecryptedText = tqcrypt.DYCryptoProvider.rsaDecrypt(rsaEncryptedText, privateKey);
+    String rsaDecryptedText = dtcrypt.DYFCryptoProvider.rsaDecrypt(rsaEncryptedText, privateKey);
     debugPrint("[rsa] decryptedText: " + rsaDecryptedText);
     
-    String signature = tqcrypt.DYCryptoProvider.rsaSign(plainText, privateKey);
+    String signature = dtcrypt.DYFCryptoProvider.rsaSign(plainText, privateKey);
     debugPrint("[rsa] signature: " + signature);
-    bool ret = tqcrypt.DYCryptoProvider.rsaVerify(signature, plainText, publicKey);
+    bool ret = dtcrypt.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
     debugPrint("[rsa] signature verify: " + ret.toString());
   } catch (e) {
     debugPrint("e: $e");
