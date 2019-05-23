@@ -2,6 +2,11 @@
 
 A Flutter project based on flutter_macos_v0.5.8-dev. It provides Base64, MD5, AES, RSA with dart.
 
+## Experience
+
+在v0.5.8或以前版本中，flutter开源库不是很稳定，Base64, MD5, AES, RSA等算法或多或少存在一些问题，通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常地辛苦完成了Base64, MD5, AES, RSA等算法！<br>
+[搜到此项目的同学，希望给此项目一个star，激历我更好的创作。](https://github.com/dgynfi/dart_crypto)
+
 ## Getting Started
 
 For help getting started with Flutter, view our online <br>
