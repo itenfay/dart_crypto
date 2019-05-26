@@ -1,6 +1,11 @@
 [搜到此项目的同学，希望给此项目一个star，激历我更好的创作。](https://github.com/dgynfi/dart_crypto)
 
-# crpto_demo
+# 技术交流群
+
+欢迎加入技术交流群(群号:155353383) ，一起探讨技术问题。<br>
+![群号:155353383](https://github.com/dgynfi/dart_crypto/raw/master/images/qq155353383.jpg)
+
+# dart_crypto
 
 A Flutter project based on flutter_macos_v0.5.8-dev. It provides Base64, MD5, AES, RSA with dart.
 
@@ -19,12 +24,12 @@ For help getting started with Flutter, view our online <br>
 
 ## Usage
 
-1.原文
+1. 原文
 ```dart
 final plainText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ........。本文基本上是将dart官网部分内容进行翻译，没兴趣的请出门左转至Dart的官网，有兴趣的同志请继续阅读本文。Flutter教程在这里通常，映射是一个有键和值的对象。 键和值都可以是任何类型的对象。 每个键只出现一次，但您可以多次使用相同的值。Dart的Map支持由映射文字和Map。int和double都是num的子类型。 num类型包括基本运算符，如+， - ，/和*，也是你可以找到abs()，ceil()和floor()以及其他方法的地方。 （按位运算符，如>>，在int类中有定义。）如果num及其子类没有您要想要内容，那dart：math库可能有您想要的。Dart字符串是一系列UTF-16代码单元。 您可以使用单引号或双引号来创建字符串：您可以使用{expression}将表达式的值放在字符串中。如果表达式是标识符，则可以跳过{}。 要获取对应于对象的字符串，Dart调用对象的toString()方法。为了表示布尔值，Dart有一个名为bool的类型。 只有两个对象具有bool类型：true和false，它们都是编译时常量。Dart的类型安全意味着您不能使用if（nonbooleanValue）或assert（nonbooleanValue）等代码。 相反，明确检查值，如下所示：也许几乎每种编程语言中最常见的集合是数组或有序的对象组。 在Dart中，数组是List对象，因此大多数人只是将它们称为列表。Dart列表文字看起来像JavaScript数组文字。 这是一个简单的Dart List：";
 ```
 
-2.Base64
+2. Base64
 ```dart
 try {
     final base64Encoded = dtcrypt.DYFCryptoProvider.aBase64Encode(plainText);
@@ -36,7 +41,7 @@ try {
 }
 ```
 
-3.MD5
+3. MD5
 ```dart
 try {
     final md5Hash = dtcrypt.DYFCryptoProvider.md5Encode(plainText);
@@ -48,7 +53,7 @@ try {
 }
 ```
 
-4.AES
+4. AES
 ```dart
 try {
     final aesKey = "smMQI8dMK2nOMUR0TdpBYQUnLpbW8kjHrdy86WtU6eB1Ff6mYveYzezopmbjwBZEjPQmg";
@@ -62,15 +67,15 @@ try {
 }
 ```
 
-5.RSA
+5. RSA
 ```
-// 公钥与私钥
+// 公钥
 final publicKey =
 """MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmPW2SwJFldGVB1SM82VYvSZYR
 F1H5DREUiDK2SLnksxHAV/roC1uB44a4siUehJ9AKeV/g58pVrjhX3eSiBh9Khom
 /S2hEWF2n/6+lqqiwQi1W5rjl86v+dI2F6NgbPFpfesrRjWD9uskT2VX/ZJuMRLz
 8VPIyQOM9TW3PkMYBQIDAQAB""";
-
+// 私钥
 final privateKey =
 """MIICXAIBAAKBgQCmPW2SwJFldGVB1SM82VYvSZYRF1H5DREUiDK2SLnksxHAV/ro
 C1uB44a4siUehJ9AKeV/g58pVrjhX3eSiBh9Khom/S2hEWF2n/6+lqqiwQi1W5rj
