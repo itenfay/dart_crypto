@@ -11,7 +11,7 @@ A Flutter project based on flutter_macos_v0.5.8-dev. It provides Base64, MD5, AE
 
 ## Experience
 
-在v0.5.8或以前版本中，flutter开源库不是很稳定，AES、 RSA等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常地辛苦完成了Base64、MD5、AES、 RSA等算法！<br>
+在v0.5.8或以前版本中，flutter开源库不是很稳定，AES、 RSA等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常辛苦地完成了Base64、MD5、AES、 RSA等算法！<br>
 
 ## Getting Started
 
