@@ -6,7 +6,7 @@
 
 ## 技术交流群(群号:155353383)
 
-欢迎加入技术交流群 ，一起探讨技术问题。<br>
+欢迎加入技术交流群 ，一起探讨技术问题。<br />
 ![](https://github.com/dgynfi/dart_crypto/raw/master/images/qq155353383.jpg)
 
 ## dart_crypto
