@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 
-import './crypto/crypto_provider.dart' as dtcrypt;
+import './crypto/crypto_provider.dart' as crypto;
 
 final publicKey =
     """"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmPW2SwJFldGVB1SM82VYvSZYR
@@ -35,38 +35,49 @@ void cryptoTest() {
   // final plainText = '{"status:": 1}';
   // final plainText = '{"status:": 1}, 本文基本上是将dart官网部分内容进行翻译。';
   final plainText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ........。本文基本上是将dart官网部分内容进行翻译，没兴趣的请出门左转至Dart的官网，有兴趣的同志请继续阅读本文。Flutter教程在这里通常，映射是一个有键和值的对象。 键和值都可以是任何类型的对象。 每个键只出现一次，但您可以多次使用相同的值。Dart的Map支持由映射文字和Map。int和double都是num的子类型。 num类型包括基本运算符，如+， - ，/和*，也是你可以找到abs()，ceil()和floor()以及其他方法的地方。 （按位运算符，如>>，在int类中有定义。）如果num及其子类没有您要想要内容，那dart：math库可能有您想要的。Dart字符串是一系列UTF-16代码单元。 您可以使用单引号或双引号来创建字符串：您可以使用{expression}将表达式的值放在字符串中。如果表达式是标识符，则可以跳过{}。 要获取对应于对象的字符串，Dart调用对象的toString()方法。为了表示布尔值，Dart有一个名为bool的类型。 只有两个对象具有bool类型：true和false，它们都是编译时常量。Dart的类型安全意味着您不能使用if（nonbooleanValue）或assert（nonbooleanValue）等代码。 相反，明确检查值，如下所示：也许几乎每种编程语言中最常见的集合是数组或有序的对象组。 在Dart中，数组是List对象，因此大多数人只是将它们称为列表。Dart列表文字看起来像JavaScript数组文字。 这是一个简单的Dart List：";
-  debugPrint("plainText: " + plainText);
+  print("plainText: " + plainText);
 
   try {
-    final base64Encoded = dtcrypt.DYFCryptoProvider.aBase64Encode(plainText);
-    debugPrint("[base64] encode: " + base64Encoded);
-    final base64Decoded = dtcrypt.DYFCryptoProvider.aBase64Decode(base64Encoded);
-    debugPrint("[base64] decode: " + base64Decoded);
+    // Base64 - Encode/Decode
+    final base64Encoded = crypto.DYFCryptoProvider.yf_base64Encode(plainText);
+    print("[base64] encode: " + base64Encoded);
+    
+    final base64Decoded = crypto.DYFCryptoProvider.yf_base64Decode(base64Encoded);
+    print("[base64] decode: " + base64Decoded);
 
-    final md5Hash = dtcrypt.DYFCryptoProvider.md5Encode(plainText);
-    debugPrint("[md5] Hash: " + md5Hash);
-    final md5b16hash = dtcrypt.DYFCryptoProvider.bit16md5Enconde(plainText);
-    debugPrint("[md5] 16 bit hash: " + md5b16hash);
+    // MD5 - 32/16 bit Encode
+    final md5Hash = crypto.DYFCryptoProvider.md5Encode(plainText);
+    print("[md5] Hash: " + md5Hash);
+    
+    final md5b16hash = crypto.DYFCryptoProvider.bit16md5Enconde(plainText);
+    print("[md5] 16 bit hash: " + md5b16hash);
 
+    // AES - Encrypt/Decrypt
     // final aesKey = "smMQI8dMK2nOMUR0TdpBYQUnLpbW8kjHrdy86WtU6eB1Ff6mYveYzezopmbjwBZEjPQmg";
     final aesKey = "smMQI8dMK2";
-    debugPrint("[aes] key: " + aesKey);
-    String aesEncryptedText = dtcrypt.DYFCryptoProvider.aesEncrypt(plainText, aesKey);
-    debugPrint("[aes] encryptedText: " + aesEncryptedText);
-    String aesDecryptedText = dtcrypt.DYFCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
-    debugPrint("[aes] decryptedText: " + aesDecryptedText);
+    print("[aes] key: " + aesKey);
 
-    String rsaEncryptedText = dtcrypt.DYFCryptoProvider.rsaEncrypt(plainText, publicKey);
-    debugPrint("[rsa] encryptedText: " + rsaEncryptedText);
-    String rsaDecryptedText = dtcrypt.DYFCryptoProvider.rsaDecrypt(rsaEncryptedText, privateKey);
-    debugPrint("[rsa] decryptedText: " + rsaDecryptedText);
+    String aesEncryptedText = crypto.DYFCryptoProvider.aesEncrypt(plainText, aesKey);
+    print("[aes] encryptedText: " + aesEncryptedText);
+   
+    String aesDecryptedText = crypto.DYFCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
+    print("[aes] decryptedText: " + aesDecryptedText);
+
+    // RSA - Encrypt/Decrypt
+    String rsaEncryptedText = crypto.DYFCryptoProvider.rsaEncrypt(plainText, publicKey);
+    print("[rsa] encryptedText: " + rsaEncryptedText);
     
-    String signature = dtcrypt.DYFCryptoProvider.rsaSign(plainText, privateKey);
-    debugPrint("[rsa] signature: " + signature);
-    bool ret = dtcrypt.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
-    debugPrint("[rsa] signature verification: " + ret.toString());
+    String rsaDecryptedText = crypto.DYFCryptoProvider.rsaDecrypt(rsaEncryptedText, privateKey);
+    print("[rsa] decryptedText: " + rsaDecryptedText);
+    
+    // RSA - Sign/Verify
+    String signature = crypto.DYFCryptoProvider.rsaSign(plainText, privateKey);
+    print("[rsa] signature: " + signature);
+    
+    bool ret = crypto.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
+    print("[rsa] signature verification: " + ret.toString());
   } catch (e) {
-    debugPrint("e: $e");
+    print("e: $e");
   }
 }
 

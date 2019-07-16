@@ -19,7 +19,7 @@ import './rsa/rsa_key_formatter.dart' show RSAKeyFormatter;
 /// [DYFCryptoProvider] provides Base64, 16/32 bit MD5, AES, RSA, etc.
 class DYFCryptoProvider {
   /// Converts a string to base64.
-  static aBase64Encode(String string) {
+  static yf_base64Encode(String string) {
     if (string == null) throw new ArgumentError("The argument is null");
 
     // get a base64 encoder instance.
@@ -34,7 +34,7 @@ class DYFCryptoProvider {
   }
 
   /// Converts a base64 encoded string to a string or a `Uint8List`.
-  static aBase64Decode(String encodedString, {bool createUint8List = false}) {
+  static yf_base64Decode(String encodedString, {bool createUint8List = false}) {
     if (encodedString == null) throw new ArgumentError("encodedString is null");
 
     // get a base64 decoder instance.

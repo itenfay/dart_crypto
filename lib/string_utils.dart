@@ -5,8 +5,9 @@
 
 import 'dart:convert';
 import 'dart:math' show Random;
-import './crypto/crypto_provider.dart' as crypt;
+import './crypto/crypto_provider.dart' as crypto;
 
+// Updated and unreal keys.
 class KeyConstants {
   static final kComm = "##@...#FiQKBgQCmPW2SwJFl}";
   static final kPublic =
@@ -67,8 +68,8 @@ class StringUtils extends RandomObjectGenerator implements BaseStringUtils {
       String middleKey = randomKey + KeyConstants.kComm;
       print("middleKey: $middleKey");
 
-      String realKey = crypt.DYFCryptoProvider.bit16md5Enconde(middleKey);
-      String mParam = crypt.DYFCryptoProvider.aesEncrypt(s, realKey);
+      String realKey = crypto.DYFCryptoProvider.bit16md5Enconde(middleKey);
+      String mParam = crypto.DYFCryptoProvider.aesEncrypt(s, realKey);
 
       var middleMap = Map();
       middleMap["p"] = mParam;
@@ -76,7 +77,7 @@ class StringUtils extends RandomObjectGenerator implements BaseStringUtils {
       var jp = json.encode(middleMap);
       print("jp: $jp");
 
-      String ciphertext = crypt.DYFCryptoProvider.rsaEncrypt(jp, KeyConstants.kPublic);
+      String ciphertext = crypto.DYFCryptoProvider.rsaEncrypt(jp, KeyConstants.kPublic);
       print("ciphertext: $ciphertext");
 
       return ciphertext;
@@ -92,7 +93,7 @@ class StringUtils extends RandomObjectGenerator implements BaseStringUtils {
     if (s.isEmpty) return s;
 
     try {
-      String data = crypt.DYFCryptoProvider.rsaDecrypt(s, KeyConstants.kPrivate);
+      String data = crypto.DYFCryptoProvider.rsaDecrypt(s, KeyConstants.kPrivate);
 
       var map = json.decode(data);
       var mParam = map["p"];
@@ -102,8 +103,8 @@ class StringUtils extends RandomObjectGenerator implements BaseStringUtils {
       String middleKey = randomKey + KeyConstants.kComm;
       print("middleKey: $middleKey");
 
-      String realKey = crypt.DYFCryptoProvider.bit16md5Enconde(middleKey);
-      String decodedText = crypt.DYFCryptoProvider.aesDecrypt(mParam, realKey);
+      String realKey = crypto.DYFCryptoProvider.bit16md5Enconde(middleKey);
+      String decodedText = crypto.DYFCryptoProvider.aesDecrypt(mParam, realKey);
 
       return decodedText;
     } catch (e) {

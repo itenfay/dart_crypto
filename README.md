@@ -1,26 +1,30 @@
-[搜到此项目的同学，希望给此项目一个star，激历我更好的创作。](https://github.com/dgynfi/dart_crypto)
+[如果你觉得能帮助到你，请给一颗小星星。谢谢！(If you think it can help you, please give it a star. Thanks!)](https://github.com/dgynfi/dart_crypto)
 
-# 技术交流群
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
+[![Support](https://img.shields.io/badge/support-Flutter%20|%20iOS%20|%20Android-blue.svg?style=flat)](https://flutterchina.club)&nbsp;
+[![Build Status](https://travis-ci.org/dgynfi/dart_crypto.svg?branch=master)](https://travis-ci.org/dgynfi/dart_crypto)
 
-欢迎加入技术交流群(群号:155353383) ，一起探讨技术问题。<br>
-![群号:155353383](https://github.com/dgynfi/dart_crypto/raw/master/images/qq155353383.jpg)
+## 技术交流群(群号:155353383)
 
-# dart_crypto
+欢迎加入技术交流群 ，一起探讨技术问题。<br>
+![](https://github.com/dgynfi/dart_crypto/raw/master/images/qq155353383.jpg)
 
-A Flutter project based on flutter_macos_v0.5.8-dev. It provides Base64, MD5, AES, RSA with dart.
+## dart_crypto
+
+A Flutter project based on flutter_macos_v0.5.8-dev. It provides Base64, 32/16 bit MD5, AES, RSA with dart.
 
 ## Experience
 
-在v0.5.8或以前版本中，flutter开源库不是很稳定，AES、 RSA等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常辛苦地完成了Base64、MD5、AES、 RSA等算法！<br>
+在v0.5.8或以前版本中，flutter开源库不是很稳定，AES、 RSA等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常辛苦地完成了Base64、MD5、AES、 RSA等算法！
 
 ## Getting Started
 
-For help getting started with Flutter, view our online <br>
-1. [documentation](https://flutter.io/) <br>
-2. [Flutter中文网](https://flutterchina.club) <br>
-3. [Flutter SDK Archive](https://flutter.io/sdk-archive/#macos) <br>
-4. [Dart Packages](https://pub.flutter-io.cn) <br>
-5. [Dart2 中文文档](https://www.kancloud.cn/marswill/dark2_document/709087) <br>
+For help getting started with Flutter, view our online <br />
+1. [documentation](https://flutter.io/) <br />
+2. [Flutter中文网](https://flutterchina.club) <br />
+3. [Flutter SDK Archive](https://flutter.io/sdk-archive/#macos) <br />
+4. [Dart Packages](https://pub.flutter-io.cn) <br />
+5. [Dart2 中文文档](https://www.kancloud.cn/marswill/dark2_document/709087) <br />
 
 ## Usage
 
@@ -32,38 +36,46 @@ final plainText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit .....
 2. Base64
 ```dart
 try {
-    final base64Encoded = dtcrypt.DYFCryptoProvider.aBase64Encode(plainText);
-    debugPrint("[base64] encode: " + base64Encoded);
-    final base64Decoded = dtcrypt.DYFCryptoProvider.aBase64Decode(base64Encoded);
-    debugPrint("[base64] decode: " + base64Decoded);
+    // Base64 - Encode/Decode
+    final base64Encoded = crypto.DYFCryptoProvider.yf_base64Encode(plainText);
+    print("[base64] encode: " + base64Encoded);
+
+    final base64Decoded = crypto.DYFCryptoProvider.yf_base64Decode(base64Encoded);
+    print("[base64] decode: " + base64Decoded);
 } catch (e) {
-    debugPrint("e: $e");
+    print("e: $e");
 }
 ```
 
 3. MD5
 ```dart
 try {
-    final md5Hash = dtcrypt.DYFCryptoProvider.md5Encode(plainText);
-    debugPrint("[md5] Hash: " + md5Hash);
-    final md5b16hash = dtcrypt.DYFCryptoProvider.bit16md5Enconde(plainText);
-    debugPrint("[md5] 16 bit hash: " + md5b16hash);
+    // MD5 - 32/16 bit Encode
+    final md5Hash = crypto.DYFCryptoProvider.md5Encode(plainText);
+    print("[md5] Hash: " + md5Hash);
+
+    final md5b16hash = crypto.DYFCryptoProvider.bit16md5Enconde(plainText);
+    print("[md5] 16 bit hash: " + md5b16hash);
 } catch (e) {
-    debugPrint("e: $e");
+    print("e: $e");
 }
 ```
 
 4. AES
 ```dart
 try {
-    final aesKey = "smMQI8dMK2nOMUR0TdpBYQUnLpbW8kjHrdy86WtU6eB1Ff6mYveYzezopmbjwBZEjPQmg";
-    debugPrint("[aes] key: " + aesKey);
-    String aesEncryptedText = dtcrypt.DYFCryptoProvider.aesEncrypt(plainText, aesKey);
-    debugPrint("[aes] encryptedText: " + aesEncryptedText);
-    String aesDecryptedText = dtcrypt.DYFCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
-    debugPrint("[aes] decryptedText: " + aesDecryptedText);
+    // AES - Encrypt/Decrypt
+    // final aesKey = "smMQI8dMK2nOMUR0TdpBYQUnLpbW8kjHrdy86WtU6eB1Ff6mYveYzezopmbjwBZEjPQmg";
+    final aesKey = "smMQI8dMK2";
+    print("[aes] key: " + aesKey);
+
+    String aesEncryptedText = crypto.DYFCryptoProvider.aesEncrypt(plainText, aesKey);
+    print("[aes] encryptedText: " + aesEncryptedText);
+
+    String aesDecryptedText = crypto.DYFCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
+    print("[aes] decryptedText: " + aesDecryptedText);
 } catch (e) {
-    debugPrint("e: $e");
+    print("e: $e");
 }
 ```
 
@@ -75,6 +87,7 @@ final publicKey =
 F1H5DREUiDK2SLnksxHAV/roC1uB44a4siUehJ9AKeV/g58pVrjhX3eSiBh9Khom
 /S2hEWF2n/6+lqqiwQi1W5rjl86v+dI2F6NgbPFpfesrRjWD9uskT2VX/ZJuMRLz
 8VPIyQOM9TW3PkMYBQIDAQAB""";
+
 // 私钥
 final privateKey =
 """MIICXAIBAAKBgQCmPW2SwJFldGVB1SM82VYvSZYRF1H5DREUiDK2SLnksxHAV/ro
@@ -91,18 +104,27 @@ cM524IfM3Meq43mtj4xbHHS50f+7Z+sfjiMtyvzVGGp/oglB099yW5Q6ZgLcDm10
 7NkmYH2euOTwX7CNlqsCQBicZxvPsIgp8zdAiGbxverXzmZs9JZDODUhw8HQkm2o
 CZWXHDraHaZ9NA88vpdLfqBXtF5t0QNFpD80F/7HjtE=""";
 ```
+
 ```dart
 try {
-    String rsaEncryptedText = dtcrypt.DYFCryptoProvider.rsaEncrypt(plainText, publicKey);
-    debugPrint("[rsa] encryptedText: " + rsaEncryptedText);
-    String rsaDecryptedText = dtcrypt.DYFCryptoProvider.rsaDecrypt(rsaEncryptedText, privateKey);
-    debugPrint("[rsa] decryptedText: " + rsaDecryptedText);
+    // RSA - Encrypt/Decrypt
+    String rsaEncryptedText = crypto.DYFCryptoProvider.rsaEncrypt(plainText, publicKey);
+    print("[rsa] encryptedText: " + rsaEncryptedText);
 
-    String signature = dtcrypt.DYFCryptoProvider.rsaSign(plainText, privateKey);
-    debugPrint("[rsa] signature: " + signature);
-    bool ret = dtcrypt.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
-    debugPrint("[rsa] signature verification: " + ret.toString());
+    String rsaDecryptedText = crypto.DYFCryptoProvider.rsaDecrypt(rsaEncryptedText, privateKey);
+    print("[rsa] decryptedText: " + rsaDecryptedText);
+
+    // RSA - Sign/Verify
+    String signature = crypto.DYFCryptoProvider.rsaSign(plainText, privateKey);
+    print("[rsa] signature: " + signature);
+
+    bool ret = crypto.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
+    print("[rsa] signature verification: " + ret.toString());
 } catch (e) {
-    debugPrint("e: $e");
+    print("e: $e");
 }
 ```
+
+## 应用
+
+- [查看示例：传送门](https://github.com/dgynfi/dart_crypto/blob/master/lib/string_utils.dart)
