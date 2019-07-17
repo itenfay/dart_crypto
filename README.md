@@ -11,7 +11,7 @@
 
 ## dart_crypto
 
-A Flutter project based on flutter_macos_v0.5.8-dev. It provides Base64, 32/16 bit MD5, AES, RSA with dart.
+一行代码实现 dart Base64, 32/16 bit MD5, AES, RSA算法，操作简单好用。 (A Flutter project based on flutter_macos_v0.5.8-dev. It achieves Base64, 32/16 bit MD5, AES and RSA algorithms for dart with one line of code. The operation is simple and easy to use.).
 
 ## Experience
 
@@ -20,7 +20,7 @@ A Flutter project based on flutter_macos_v0.5.8-dev. It provides Base64, 32/16 b
 ## Getting Started
 
 For help getting started with Flutter, view our online <br />
-1. [documentation](https://flutter.io/) <br />
+1. [Documentation](https://flutter.io/) <br />
 2. [Flutter中文网](https://flutterchina.club) <br />
 3. [Flutter SDK Archive](https://flutter.io/sdk-archive/#macos) <br />
 4. [Dart Packages](https://pub.flutter-io.cn) <br />
@@ -88,7 +88,7 @@ F1H5DREUiDK2SLnksxHAV/roC1uB44a4siUehJ9AKeV/g58pVrjhX3eSiBh9Khom
 /S2hEWF2n/6+lqqiwQi1W5rjl86v+dI2F6NgbPFpfesrRjWD9uskT2VX/ZJuMRLz
 8VPIyQOM9TW3PkMYBQIDAQAB""";
 
-// 私钥
+// 私钥(pkcs8)
 final privateKey =
 """MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKY9bZLAkWV0ZUHV
 IzzZVi9JlhEXUfkNERSIMrZIueSzEcBX+ugLW4HjhriyJR6En0Ap5X+DnylWuOFf
