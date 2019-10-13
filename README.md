@@ -13,7 +13,7 @@
 
 ## dart_crypto
 
-&emsp; 此 Flutter 工程基于 flutter_macos_v0.5.8-dev 版本，用 dart 语言开发。一行代码就实现 Base64, 32/16 bit MD5, AES, RSA算法，操作简单好用。 (This Flutter project is based on flutter_macos_v0.5.8-dev and is developed in dart language. it achieves Base64, 32/16 bit MD5, AES and RSA algorithms in one line of code, the operation is simple and easy to use.)
+&emsp; 此 Flutter 工程基于 flutter_macos_v0.5.8-dev 版本，用 dart 语言开发。一行代码实现 Base64, 32/16 bit MD5, AES, RSA算法。 (This Flutter project is based on flutter_macos_v0.5.8-dev and is developed in dart language. It achieves Base64, 32/16 bit MD5, AES and RSA algorithms in one line of code.)
 
 ## Experience
 
@@ -136,5 +136,4 @@ try {
 ## Sample Codes
 
 - [Sample Codes Gateway](https://github.com/dgynfi/dart_crypto/blob/master/lib/string_utils.dart)
-
 
