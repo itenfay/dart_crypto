@@ -2,24 +2,26 @@
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
 [![Support](https://img.shields.io/badge/support-Flutter%20|%20iOS%20|%20Android-blue.svg?style=flat)](https://flutterchina.club)&nbsp;
-[![Build Status](https://travis-ci.org/dgynfi/dart_crypto.svg?branch=master)](https://travis-ci.org/dgynfi/dart_crypto)
 
 ## 技术交流群(群号:155353383)
 
-欢迎加入技术交流群 ，一起探讨技术问题。<br />
-![](https://github.com/dgynfi/dart_crypto/raw/master/images/qq155353383.jpg)
+- 欢迎加入技术交流群 ，一起探讨技术问题。
+
+<div align=left>
+&emsp; <img src="https://github.com/dgynfi/dart_crypto/raw/master/images/qq155353383.jpg" width="20%" />
+</div> 
 
 ## dart_crypto
 
-一行代码实现 dart Base64, 32/16 bit MD5, AES, RSA算法，操作简单好用。 (A Flutter project based on flutter_macos_v0.5.8-dev. It achieves Base64, 32/16 bit MD5, AES and RSA algorithms for dart with one line of code. The operation is simple and easy to use.).
+&emsp; 此 Flutter 工程基于 flutter_macos_v0.5.8-dev 版本，用 dart 语言开发。一行代码就实现 Base64, 32/16 bit MD5, AES, RSA算法，操作简单好用。 (This Flutter project is based on flutter_macos_v0.5.8-dev and is developed in dart language。it achieves Base64, 32/16 bit MD5, AES and RSA algorithms in one line of code, the operation is simple and easy to use.)
 
 ## Experience
 
-在v0.5.8或以前版本中，flutter开源库不是很稳定，AES、 RSA等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常辛苦地完成了Base64、MD5、AES、 RSA等算法！
+&emsp; 在 v0.5.8 或以前版本中，flutter 开源库不是很稳定，AES、 RSA 等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常辛苦地完成了 Base64、MD5、AES、 RSA 等算法的编写！
 
 ## Getting Started
 
-For help getting started with Flutter, view our online <br />
+&emsp; For help getting started with Flutter, view our online <br />
 1. [Documentation](https://flutter.io/) <br />
 2. [Flutter中文网](https://flutterchina.club) <br />
 3. [Flutter SDK Archive](https://flutter.io/sdk-archive/#macos) <br />
@@ -29,11 +31,13 @@ For help getting started with Flutter, view our online <br />
 ## Usage
 
 1. 原文
+
 ```dart
 final plainText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ........。本文基本上是将dart官网部分内容进行翻译，没兴趣的请出门左转至Dart的官网，有兴趣的同志请继续阅读本文。Flutter教程在这里通常，映射是一个有键和值的对象。 键和值都可以是任何类型的对象。 每个键只出现一次，但您可以多次使用相同的值。Dart的Map支持由映射文字和Map。int和double都是num的子类型。 num类型包括基本运算符，如+， - ，/和*，也是你可以找到abs()，ceil()和floor()以及其他方法的地方。 （按位运算符，如>>，在int类中有定义。）如果num及其子类没有您要想要内容，那dart：math库可能有您想要的。Dart字符串是一系列UTF-16代码单元。 您可以使用单引号或双引号来创建字符串：您可以使用{expression}将表达式的值放在字符串中。如果表达式是标识符，则可以跳过{}。 要获取对应于对象的字符串，Dart调用对象的toString()方法。为了表示布尔值，Dart有一个名为bool的类型。 只有两个对象具有bool类型：true和false，它们都是编译时常量。Dart的类型安全意味着您不能使用if（nonbooleanValue）或assert（nonbooleanValue）等代码。 相反，明确检查值，如下所示：也许几乎每种编程语言中最常见的集合是数组或有序的对象组。 在Dart中，数组是List对象，因此大多数人只是将它们称为列表。Dart列表文字看起来像JavaScript数组文字。 这是一个简单的Dart List：";
 ```
 
 2. Base64
+
 ```dart
 try {
     // Base64 - Encode/Decode
@@ -48,6 +52,7 @@ try {
 ```
 
 3. MD5
+
 ```dart
 try {
     // MD5 - 32/16 bit Encode
@@ -62,6 +67,7 @@ try {
 ```
 
 4. AES
+
 ```dart
 try {
     // AES - Encrypt/Decrypt
@@ -80,6 +86,7 @@ try {
 ```
 
 5. RSA
+
 ```
 // 公钥
 final publicKey =
@@ -126,6 +133,8 @@ try {
 }
 ```
 
-## 应用
+## Sample Codes
 
-- [查看示例：传送门](https://github.com/dgynfi/dart_crypto/blob/master/lib/string_utils.dart)
+- [Sample Codes Gateway](https://github.com/dgynfi/dart_crypto/blob/master/lib/string_utils.dart)
+
+
