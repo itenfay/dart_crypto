@@ -13,15 +13,16 @@
 
 ## dart_crypto
 
-&emsp; 此 Flutter 工程基于 flutter_macos_v0.5.8-dev 版本，用 dart 语言开发。一行代码实现 Base64, 32/16 bit MD5, AES, RSA算法。 (This Flutter project is based on flutter_macos_v0.5.8-dev and is developed in dart language. It achieves Base64, 32/16 bit MD5, AES and RSA algorithms in one line of code.)
+此 Flutter 工程基于 flutter_macos_v0.5.8-dev 版本，用 Dart 语言开发。一行代码实现 Base64, 32/16 bit MD5, AES, RSA算法。 (This Flutter project is based on flutter_macos_v0.5.8-dev and is developed in dart language. It achieves Base64, 32/16 bit MD5, AES and RSA algorithms in one line of code.)
 
 ## Experience
 
-&emsp; 在 v0.5.8 或以前版本中，flutter 开源库不是很稳定，AES、 RSA 等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常辛苦地完成了 Base64、MD5、AES、 RSA 等算法的编写！
+在 v0.5.8 或以前版本中，flutter 开源库不是很稳定，AES、 RSA 等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常辛苦地完成了 Base64、MD5、AES、 RSA 等算法的编写！
 
 ## Getting Started
 
-&emsp; For help getting started with Flutter, view our online <br />
+For help getting started with Flutter, view our online <br />
+
 1. [Documentation](https://flutter.io/) <br />
 2. [Flutter中文网](https://flutterchina.club) <br />
 3. [Flutter SDK Archive](https://flutter.io/sdk-archive/#macos) <br />
@@ -133,7 +134,6 @@ try {
 }
 ```
 
-## Sample Codes
+## Code Sample
 
-- [Sample Codes Gateway](https://github.com/dgynfi/dart_crypto/blob/master/lib/string_utils.dart)
-
+- [Code Sample](https://github.com/dgynfi/dart_crypto/blob/master/lib/string_utils.dart)
