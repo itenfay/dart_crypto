@@ -3,17 +3,18 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%20|%20Android-blue.svg?style=flat)](https://flutterchina.club)&nbsp;
 
-## 技术交流群(群号:155353383)
 
-- 欢迎加入技术交流群 ，一起探讨技术问题。
+## Group(ID:155353383)
 
 <div align=left>
 &emsp; <img src="https://github.com/dgynfi/dart_crypto/raw/master/images/qq155353383.jpg" width="20%" />
 </div> 
 
+
 ## dart_crypto
 
-此 Flutter 工程基于 flutter_macos_v0.5.8-dev 版本，用 Dart 语言开发。一行代码实现 Base64, 32/16 bit MD5, AES, RSA算法。 (This Flutter project is based on flutter_macos_v0.5.8-dev and is developed in dart language. It achieves Base64, 32/16 bit MD5, AES and RSA algorithms in one line of code.)
+本项目基于flutter_macos_v0.5.8-dev版本采用Dart语言开发。`DYFCryptoProvider`集成了Base64, 32/16 Bit MD5, AES, RSA等算法。(This Flutter project is developed in Dart language based on flutter_macos_v0.5.8-dev. `DYFCryptoProvider` integrates Base64, 32/16 Bit MD5, AES and RSA algorithms.)
+
 
 ## Experience
 
@@ -29,15 +30,16 @@ For help getting started with Flutter, view our online <br />
 4. [Dart Packages](https://pub.flutter-io.cn) <br />
 5. [Dart2 中文文档](https://www.kancloud.cn/marswill/dark2_document/709087) <br />
 
+
 ## Usage
 
-1. 原文
+### Plain Text
 
 ```dart
 final plainText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ........。本文基本上是将dart官网部分内容进行翻译，没兴趣的请出门左转至Dart的官网，有兴趣的同志请继续阅读本文。Flutter教程在这里通常，映射是一个有键和值的对象。 键和值都可以是任何类型的对象。 每个键只出现一次，但您可以多次使用相同的值。Dart的Map支持由映射文字和Map。int和double都是num的子类型。 num类型包括基本运算符，如+， - ，/和*，也是你可以找到abs()，ceil()和floor()以及其他方法的地方。 （按位运算符，如>>，在int类中有定义。）如果num及其子类没有您要想要内容，那dart：math库可能有您想要的。Dart字符串是一系列UTF-16代码单元。 您可以使用单引号或双引号来创建字符串：您可以使用{expression}将表达式的值放在字符串中。如果表达式是标识符，则可以跳过{}。 要获取对应于对象的字符串，Dart调用对象的toString()方法。为了表示布尔值，Dart有一个名为bool的类型。 只有两个对象具有bool类型：true和false，它们都是编译时常量。Dart的类型安全意味着您不能使用if（nonbooleanValue）或assert（nonbooleanValue）等代码。 相反，明确检查值，如下所示：也许几乎每种编程语言中最常见的集合是数组或有序的对象组。 在Dart中，数组是List对象，因此大多数人只是将它们称为列表。Dart列表文字看起来像JavaScript数组文字。 这是一个简单的Dart List：";
 ```
 
-2. Base64
+### Base64
 
 ```dart
 try {
@@ -52,7 +54,7 @@ try {
 }
 ```
 
-3. MD5
+### MD5
 
 ```dart
 try {
@@ -67,7 +69,7 @@ try {
 }
 ```
 
-4. AES
+### AES
 
 ```dart
 try {
@@ -86,7 +88,7 @@ try {
 }
 ```
 
-5. RSA
+### RSA
 
 ```
 // 公钥
@@ -134,6 +136,12 @@ try {
 }
 ```
 
+
 ## Code Sample
 
 - [Code Sample](https://github.com/dgynfi/dart_crypto/blob/master/lib/string_utils.dart)
+
+
+## Feedback is welcome
+
+If you notice any issue, got stuck or just want to chat feel free to create an issue. I will be happy to help you.
