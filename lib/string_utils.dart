@@ -9,14 +9,18 @@ import './crypto/crypto_provider.dart' as crypto;
 
 // Updated and unreal keys.
 class KeyConstants {
+  
   static final kComm = "##@...#FiQKBgQCmPW2SwJFl}";
+  
   static final kPublic =
       "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmPW2SwJFldGVB1SM82VYvSZYR...8VPIyQOM9TW3PkMYBQIDAQAB";
+  
   static final kPrivate =
       "MIICXAIBAAKBgQCmPW2SwJFldGVB1SM82VYvSZYRF1H5DREUiDK2SLnksxHAV/ro...CZWXHDraHaZ9NA88vpdLfqBXtF5t0QNFpD80F/7HjtE=";
 }
 
 class RandomObjectGenerator {
+  
   int genRandomNumber() {
     var max = 1 << 32;
     return Random().nextInt(max);
@@ -37,6 +41,7 @@ class RandomObjectGenerator {
 
     return buffer.toString();
   }
+  
 }
 
 abstract class BaseStringUtils {
@@ -47,6 +52,7 @@ abstract class BaseStringUtils {
 }
 
 class StringUtils extends RandomObjectGenerator implements BaseStringUtils {
+  
   @override
   String genRandomString({int length: 20}) => super.genRandomString(length: length);
 
@@ -113,4 +119,5 @@ class StringUtils extends RandomObjectGenerator implements BaseStringUtils {
 
     return null;
   }
+  
 }
