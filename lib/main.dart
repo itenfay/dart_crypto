@@ -7,12 +7,14 @@ import 'package:flutter/material.dart';
 
 import './crypto/crypto_provider.dart' as crypto;
 
+// 公钥
 final publicKey =
     """"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmPW2SwJFldGVB1SM82VYvSZYR
 F1H5DREUiDK2SLnksxHAV/roC1uB44a4siUehJ9AKeV/g58pVrjhX3eSiBh9Khom
 /S2hEWF2n/6+lqqiwQi1W5rjl86v+dI2F6NgbPFpfesrRjWD9uskT2VX/ZJuMRLz
 8VPIyQOM9TW3PkMYBQIDAQAB""";
 
+// 私钥 (pkcs8)
 final privateKey =
     """MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKY9bZLAkWV0ZUHV
 IzzZVi9JlhEXUfkNERSIMrZIueSzEcBX+ugLW4HjhriyJR6En0Ap5X+DnylWuOFf
@@ -32,6 +34,7 @@ A0WkPzQX/seO0Q==""";
 void main() => runApp(new MyApp());
 
 void cryptoTest() {
+  
   // final plainText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ........，当链接进行查询时，如果没有定义id，就有可能出现不同类别的内容，但是名字相同，例如某专辑的名字和某个app的名字重合。这时mt就起作用了';
   // final plainText = '{"status:": 1}';
   // final plainText = '{"status:": 1}, 本文基本上是将dart官网部分内容进行翻译。';
@@ -39,47 +42,57 @@ void cryptoTest() {
   print("plainText: " + plainText);
 
   try {
-    // Base64 - Encode/Decode
+      
+    // Base64 - Encode
     final base64Encoded = crypto.DYFCryptoProvider.yf_base64Encode(plainText);
-    print("[base64] encode: " + base64Encoded);
+    print("[Base64] Encode: " + base64Encoded);
     
+    // Base64 - Decode
     final base64Decoded = crypto.DYFCryptoProvider.yf_base64Decode(base64Encoded);
-    print("[base64] decode: " + base64Decoded);
+    print("[Base64] Decode: " + base64Decoded);
 
-    // MD5 - 32/16 bit Encode
+    // MD5 - 32 Bits Encode
     final md5Hash = crypto.DYFCryptoProvider.md5Encode(plainText);
-    print("[md5] Hash: " + md5Hash);
-    
+    print("[MD5] Hash: " + md5Hash);
+      
+    // MD5 - 16 Bits Encode
     final md5b16hash = crypto.DYFCryptoProvider.bit16md5Enconde(plainText);
-    print("[md5] 16 bit hash: " + md5b16hash);
+    print("[MD5] 16 Bits Hash: " + md5b16hash);
 
-    // AES - Encrypt/Decrypt
+    // AES Key
     // final aesKey = "smMQI8dMK2nOMUR0TdpBYQUnLpbW8kjHrdy86WtU6eB1Ff6mYveYzezopmbjwBZEjPQmg";
     final aesKey = "smMQI8dMK2";
-    print("[aes] key: " + aesKey);
+    print("[AES] Key: " + aesKey);
 
+    // AES - Encrypt
     String aesEncryptedText = crypto.DYFCryptoProvider.aesEncrypt(plainText, aesKey);
-    print("[aes] encryptedText: " + aesEncryptedText);
+    print("[AES] Encrypted Text: " + aesEncryptedText);
    
+    // AES - Decrypt
     String aesDecryptedText = crypto.DYFCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
-    print("[aes] decryptedText: " + aesDecryptedText);
+    print("[AES] Decrypted Text: " + aesDecryptedText);
 
-    // RSA - Encrypt/Decrypt
+    // RSA - Encrypt
     String rsaEncryptedText = crypto.DYFCryptoProvider.rsaEncrypt(plainText, publicKey);
-    print("[rsa] encryptedText: " + rsaEncryptedText);
+    print("[RSA] Encrypted Text: " + rsaEncryptedText);
     
+    // RSA - Decrypt
     String rsaDecryptedText = crypto.DYFCryptoProvider.rsaDecrypt(rsaEncryptedText, privateKey);
-    print("[rsa] decryptedText: " + rsaDecryptedText);
+    print("[RSA] Decrypted Text: " + rsaDecryptedText);
     
-    // RSA - Sign/Verify
+    // RSA - Sign
     String signature = crypto.DYFCryptoProvider.rsaSign(plainText, privateKey);
-    print("[rsa] signature: " + signature);
+    print("[RSA] Signature: " + signature);
     
+    // RSA - Verify
     bool ret = crypto.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
-    print("[rsa] signature verification: " + ret.toString());
+    print("[RSA] Signature Verification: " + ret.toString());
+      
   } catch (e) {
+      
     print("e: $e");
   }
+  
 }
 
 class MyApp extends StatelessWidget {
