@@ -33,7 +33,7 @@ A0WkPzQX/seO0Q==""";
 
 void main() => runApp(new MyApp());
 
-void cryptoTest() {
+void Test() {
   
   // final plainText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ........，当链接进行查询时，如果没有定义id，就有可能出现不同类别的内容，但是名字相同，例如某专辑的名字和某个app的名字重合。这时mt就起作用了';
   // final plainText = '{"status:": 1}';
@@ -100,7 +100,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    cryptoTest();
+    Test();
 
     return new MaterialApp(
       title: 'Flutter Demo',
