@@ -13,12 +13,12 @@
 
 ## dart_crypto
 
-本项目基于flutter_macos_v0.5.8-dev版本采用Dart语言开发。`DYFCryptoProvider`集成了Base64, 32/16 Bit MD5, AES, RSA等算法。(This Flutter project is developed in Dart language based on flutter_macos_v0.5.8-dev. `DYFCryptoProvider` integrates Base64, 32/16 Bit MD5, AES and RSA algorithms.)
+本项目基于flutter_macos_v0.5.8-dev版本采用Dart语言开发。`DYFCryptoProvider`集成了Base64, 32/16 Bits MD5, AES, RSA等算法。(This Flutter project is developed in Dart language based on flutter_macos_v0.5.8-dev. `DYFCryptoProvider` integrates Base64, 32/16 Bit MD5, AES and RSA algorithms.)
 
 
 ## Experience
 
-在 v0.5.8 或以前版本中，flutter 开源库不是很稳定，AES、 RSA 等算法或多或少存在一些问题。通过查阅资料和调试，历经7个工作日的时间和算法打交道，非常辛苦地完成了 Base64、MD5、AES、 RSA 等算法的编写！
+在v0.5.8或以前版本中，flutter开源库不是很稳定，AES、RSA等算法或多或少存在一些问题。通过查阅资料，历经7个工作日进行调试，并和算法打交道，非常辛苦地完成了Base64、MD5、AES、RSA等算法的编写！
 
 ## Getting Started
 
@@ -43,13 +43,17 @@ final plainText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit .....
 
 ```dart
 try {
-    // Base64 - Encode/Decode
-    final base64Encoded = crypto.DYFCryptoProvider.yf_base64Encode(plainText);
-    print("[base64] encode: " + base64Encoded);
 
+    // Base64 - Encode/
+    final base64Encoded = crypto.DYFCryptoProvider.yf_base64Encode(plainText);
+    print("[Base64] encode: " + base64Encoded);
+
+    // Base64 - Encode
     final base64Decoded = crypto.DYFCryptoProvider.yf_base64Decode(base64Encoded);
-    print("[base64] decode: " + base64Decoded);
+    print("[Base64] decode: " + base64Decoded);
+
 } catch (e) {
+
     print("e: $e");
 }
 ```
@@ -58,13 +62,17 @@ try {
 
 ```dart
 try {
-    // MD5 - 32/16 bit Encode
-    final md5Hash = crypto.DYFCryptoProvider.md5Encode(plainText);
-    print("[md5] Hash: " + md5Hash);
 
+    // MD5 - 32 Bits Encode
+    final md5Hash = crypto.DYFCryptoProvider.md5Encode(plainText);
+    print("[MD5] Hash: " + md5Hash);
+
+    // MD5 - 16 Bits Encode
     final md5b16hash = crypto.DYFCryptoProvider.bit16md5Enconde(plainText);
-    print("[md5] 16 bit hash: " + md5b16hash);
+    print("[MD5] 16 Bits Hash: " + md5b16hash);
+
 } catch (e) {
+
     print("e: $e");
 }
 ```
@@ -73,17 +81,22 @@ try {
 
 ```dart
 try {
-    // AES - Encrypt/Decrypt
+
+    // AES Key
     // final aesKey = "smMQI8dMK2nOMUR0TdpBYQUnLpbW8kjHrdy86WtU6eB1Ff6mYveYzezopmbjwBZEjPQmg";
     final aesKey = "smMQI8dMK2";
-    print("[aes] key: " + aesKey);
+    print("[AES] key: " + aesKey);
 
+    // AES - Encrypt
     String aesEncryptedText = crypto.DYFCryptoProvider.aesEncrypt(plainText, aesKey);
-    print("[aes] encryptedText: " + aesEncryptedText);
+    print("[AES] encryptedText: " + aesEncryptedText);
 
+    // AES - Decrypt
     String aesDecryptedText = crypto.DYFCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
-    print("[aes] decryptedText: " + aesDecryptedText);
+    print("[AES] decryptedText: " + aesDecryptedText);
+
 } catch (e) {
+
     print("e: $e");
 }
 ```
@@ -98,7 +111,7 @@ F1H5DREUiDK2SLnksxHAV/roC1uB44a4siUehJ9AKeV/g58pVrjhX3eSiBh9Khom
 /S2hEWF2n/6+lqqiwQi1W5rjl86v+dI2F6NgbPFpfesrRjWD9uskT2VX/ZJuMRLz
 8VPIyQOM9TW3PkMYBQIDAQAB""";
 
-// 私钥(pkcs8)
+// 私钥 (pkcs8)
 final privateKey =
 """MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKY9bZLAkWV0ZUHV
 IzzZVi9JlhEXUfkNERSIMrZIueSzEcBX+ugLW4HjhriyJR6En0Ap5X+DnylWuOFf
@@ -118,20 +131,25 @@ A0WkPzQX/seO0Q==""";
 
 ```dart
 try {
-    // RSA - Encrypt/Decrypt
+
+    // RSA - Encrypt
     String rsaEncryptedText = crypto.DYFCryptoProvider.rsaEncrypt(plainText, publicKey);
     print("[rsa] encryptedText: " + rsaEncryptedText);
 
+    // RSA - Decrypt
     String rsaDecryptedText = crypto.DYFCryptoProvider.rsaDecrypt(rsaEncryptedText, privateKey);
     print("[rsa] decryptedText: " + rsaDecryptedText);
 
-    // RSA - Sign/Verify
+    // RSA - Sign
     String signature = crypto.DYFCryptoProvider.rsaSign(plainText, privateKey);
     print("[rsa] signature: " + signature);
 
+    // RSA - Verify
     bool ret = crypto.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
     print("[rsa] signature verification: " + ret.toString());
+
 } catch (e) {
+
     print("e: $e");
 }
 ```
