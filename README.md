@@ -44,11 +44,11 @@ final plainText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit .....
 ```dart
 try {
 
-    // Base64 - Encode/
+    // Base64 - Encode
     final base64Encoded = crypto.DYFCryptoProvider.yf_base64Encode(plainText);
     print("[Base64] encode: " + base64Encoded);
 
-    // Base64 - Encode
+    // Base64 - Dncode
     final base64Decoded = crypto.DYFCryptoProvider.yf_base64Decode(base64Encoded);
     print("[Base64] decode: " + base64Decoded);
 
