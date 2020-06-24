@@ -1,4 +1,4 @@
-[如果你觉得能帮助到你，请给一颗小星星。谢谢！(If you think it can help you, please give it a star. Thanks!)](https://github.com/dgynfi/dart_crypto)
+如果此项目能帮助到你，就请你给[一颗星](https://github.com/dgynfi/dart_crypto)。谢谢！(If this project can help you, please give it [a star](https://github.com/dgynfi/dart_crypto). Thanks!)
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%20|%20Android-blue.svg?style=flat)](https://flutterchina.club)&nbsp;
@@ -24,11 +24,29 @@
 
 For help getting started with Flutter, view our online <br />
 
-1. [Flutter Documentation](https://flutter.io/) <br />
-2. [Flutter中文网](https://flutterchina.club) <br />
-3. [Flutter SDK Archive](https://flutter.io/sdk-archive/#macos) <br />
-4. [Dart Packages](https://pub.flutter-io.cn) <br />
-5. [Dart2 中文文档](https://www.kancloud.cn/marswill/dark2_document/709087) <br />
+- [Flutter中文网](https://flutterchina.club) 
+  - [Flutter文档](https://flutterchina.club/docs/)
+  - [Flutter中文网开源项目](https://flutterchina.club/opensource.html)
+  - [Flutter实战](https://book.flutterchina.club)
+
+- [Flutter SDK releases](https://flutter.dev/docs/development/tools/sdk/releases#macos) - The Stable channel contains the most stable Flutter builds. See [Flutter’s channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) for details.
+
+- [Flutter Samples](https://github.com/flutter/samples) - A collection of Flutter examples and demos.
+
+- [Flutter Documentation](https://flutter.dev/docs)
+
+- [FlutterHub](https://www.flutterhub.cn)
+
+- [Dart packages](https://pub.flutter-io.cn) - Find and use packages to build [Dart↗](https://dart.cn/) and [Flutter↗](https://flutter.cn/) apps.
+
+- [Dart API docs](https://api.flutter.dev) - The API reference herein covers all libraries that are exported by the Flutter SDK.
+
+- [Dart 编程语言中文网](https://www.dartcn.com)
+
+- [简单Dart示例 · Dart2 中文文档 · 看云](https://www.kancloud.cn/marswill/dark2_document/709087) - Dart2 语法、特性的讲解以及一些简单 Dart 示例参考。
+  - *[A tour of the Dart language](https://www.dartlang.org/guides/language/language-tour) - 英文原版参考。*
+
+- [DartPad](https://dartpad.dartlang.org/) - 使用 DartPad 来体验 Dart 语言的更多特性。
 
 
 ## Usage
