@@ -1,4 +1,4 @@
-如果此项目能帮助到你，就请你给[一颗星](https://github.com/dgynfi/dart_crypto)。谢谢！(If this project can help you, please give it [a star](https://github.com/dgynfi/dart_crypto). Thanks!)
+如果此项目能帮助到你，就请你给[一颗星](https://github.com/chenxing640/dart_crypto)。谢谢！(If this project can help you, please give it [a star](https://github.com/chenxing640/dart_crypto). Thanks!)
 
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
@@ -8,7 +8,7 @@
 ## Group(ID:155353383)
 
 <div align=left>
-&emsp; <img src="https://github.com/dgynfi/dart_crypto/raw/master/images/qq155353383.jpg" width="30%" />
+&emsp; <img src="https://github.com/chenxing640/dart_crypto/raw/master/images/qq155353383.jpg" width="30%" />
 </div> 
 
 
@@ -62,7 +62,6 @@ final plainText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit .....
 
 ```dart
 try {
-
     // Base64 - Encode
     final base64Encoded = crypto.DYFCryptoProvider.yf_base64Encode(plainText);
     print("[Base64] encode: " + base64Encoded);
@@ -70,9 +69,7 @@ try {
     // Base64 - Dncode
     final base64Decoded = crypto.DYFCryptoProvider.yf_base64Decode(base64Encoded);
     print("[Base64] decode: " + base64Decoded);
-
 } catch (e) {
-
     print("e: $e");
 }
 ```
@@ -81,7 +78,6 @@ try {
 
 ```dart
 try {
-
     // MD5 - 32 Bits Encode
     final md5Hash = crypto.DYFCryptoProvider.md5Encode(plainText);
     print("[MD5] Hash: " + md5Hash);
@@ -89,9 +85,7 @@ try {
     // MD5 - 16 Bits Encode
     final md5b16hash = crypto.DYFCryptoProvider.bit16md5Enconde(plainText);
     print("[MD5] 16 Bits Hash: " + md5b16hash);
-
 } catch (e) {
-
     print("e: $e");
 }
 ```
@@ -100,7 +94,6 @@ try {
 
 ```dart
 try {
-
     // AES Key
     // final aesKey = "smMQI8dMK2nOMUR0TdpBYQUnLpbW8kjHrdy86WtU6eB1Ff6mYveYzezopmbjwBZEjPQmg";
     final aesKey = "smMQI8dMK2";
@@ -113,9 +106,7 @@ try {
     // AES - Decrypt
     String aesDecryptedText = crypto.DYFCryptoProvider.aesDecrypt(aesEncryptedText, aesKey);
     print("[AES] decryptedText: " + aesDecryptedText);
-
 } catch (e) {
-
     print("e: $e");
 }
 ```
@@ -150,7 +141,6 @@ A0WkPzQX/seO0Q==""";
 
 ```dart
 try {
-
     // RSA - Encrypt
     String rsaEncryptedText = crypto.DYFCryptoProvider.rsaEncrypt(plainText, publicKey);
     print("[rsa] encryptedText: " + rsaEncryptedText);
@@ -166,9 +156,7 @@ try {
     // RSA - Verify
     bool ret = crypto.DYFCryptoProvider.rsaVerify(signature, plainText, publicKey);
     print("[rsa] signature verification: " + ret.toString());
-
 } catch (e) {
-
     print("e: $e");
 }
 ```
@@ -176,9 +164,9 @@ try {
 
 ## Sample
 
-- [string_utils.dart](https://github.com/dgynfi/dart_crypto/blob/master/lib/string_utils.dart)
+- [string_utils.dart](https://github.com/chenxing640/dart_crypto/blob/master/lib/string_utils.dart)
 
 
 ## Feedback is welcome
 
-If you notice any issue, got stuck or just want to chat feel free to create an issue. I will be happy to help you.
+If you notice any issue, got stuck to create an issue. I will be happy to help you.
