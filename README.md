@@ -1,8 +1,14 @@
-如果此项目能帮助到你，就请你给[一颗星](https://github.com/chenxing640/dart_crypto)。谢谢！(If this project can help you, please give it [a star](https://github.com/chenxing640/dart_crypto). Thanks!)
+如果此项目能帮助到你，就请你给[一颗星](https://github.com/chenxing640/dart_crypto)，谢谢！(If this project can help you, please give it a [star](https://github.com/chenxing640/dart_crypto), thanks!)
 
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%20|%20Android-blue.svg?style=flat)](https://flutterchina.club)&nbsp;
+
+
+## dart_crypto
+
+<!-- 基于flutter_macos_v0.5.8-dev版本采用Dart语言开发。 -->
+集成了Base64, 32/16 Bits MD5, AES, RSA等算法(This integrates Base64, 32/16 Bits MD5, AES and RSA algorithms.)。
 
 
 ## Group(ID:155353383)
@@ -11,15 +17,6 @@
 &emsp; <img src="https://github.com/chenxing640/dart_crypto/raw/master/images/qq155353383.jpg" width="30%" />
 </div> 
 
-
-## dart_crypto
-
-本项目基于flutter_macos_v0.5.8-dev版本采用Dart语言开发。`DYFCryptoProvider`集成了Base64, 32/16 Bits MD5, AES, RSA等算法。(This Flutter project is developed in Dart language based on flutter_macos_v0.5.8-dev. `DYFCryptoProvider` integrates Base64, 32/16 Bits MD5, AES and RSA algorithms.)
-
-
-## Experience
-
-在v0.5.8或以前版本中，flutter开源库不是很稳定，AES、RSA等算法或多或少存在一些问题。通过查阅资料，历经7个工作日进行调试，并和算法打交道，非常辛苦地完成了Base64、MD5、AES、RSA等算法的编写！
 
 ## Getting Started
 
@@ -165,6 +162,11 @@ try {
 ## Sample
 
 - [string_utils.dart](https://github.com/chenxing640/dart_crypto/blob/master/lib/string_utils.dart)
+
+
+## Other Project
+
+- [grab_ethtoken_info](https://github.com/chenxing640/grab_ethtoken_info)
 
 
 ## Feedback is welcome
