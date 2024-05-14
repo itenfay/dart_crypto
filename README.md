@@ -7,15 +7,21 @@
 
 集成了Base64, 32/16 Bits MD5, AES, RSA等算法(This integrates Base64, 32/16 Bits MD5, AES and RSA algorithms.)。
 
-## Other Project
-
-- [grab_ethtoken_info](https://github.com/chenxing640/grab_ethtoken_info)
-
 ## Group(ID:155353383)
 
 <div align=left>
 &emsp; <img src="https://github.com/chenxing640/dart_crypto/raw/master/images/qq155353383.jpg" width="30%" />
 </div> 
+
+## Recommendation
+
+* [Grab ethtoken info](https://github.com/chenxing640/grab_ethtoken_info)
+
+## Getting Started
+
+For help getting started with Flutter, view the online <br />
+
+* [Flutter Hub](https://github.com/chenxing640/Awesome/blob/master/Flutter.md)
 
 ## Usage
 
@@ -130,4 +136,4 @@ try {
 
 ## Feedback is welcome
 
-If you notice any issue, got stuck to create an issue. I will be happy to help you.
+If you notice any issue, please create an issue. I will be happy to help you.
